@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 //This method is used to display coins returned to customer
 displayReturnedCoins = function(returnedCoins) {
-	var displayContent = "";
+	var displayContent = "<p> Money returned: </p>";
 	for(coin in returnedCoins) {
 		if(returnedCoins[coin] != 0) {
 		    displayContent += "<span><b>" + coin + "FCH </b> : <b>" + returnedCoins[coin] + "</b> coins returned</span></br>";
