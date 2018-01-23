@@ -1,0 +1,37 @@
+td {
+	text-align: center;
+}
+
+.drinkContent {
+	display: table;
+	height: 50px;
+	position: relative;
+	width: 50px;
+}
+
+#totalAmountInserted {
+	font-weight: bold;
+	border: none;
+    background-color: transparent;
+}
+
+.availableDrinks img {
+	vertical-align: middle;
+	display: table-cell;
+	width: 120px;
+	height: 100px;
+}
+
+.drinkContent span {
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.buySomeDrink {
+	margin-top: 30px;
+}
+
+#errorMessage {
+	color: red;
+	font-weight: bold;
+}

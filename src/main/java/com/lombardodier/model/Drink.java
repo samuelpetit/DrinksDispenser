@@ -1,6 +1,7 @@
 package com.lombardodier.model;
 
-import lombok.Builder;
+import java.io.Serializable;
+
 import lombok.Data;
 
 /**
@@ -9,43 +10,48 @@ import lombok.Data;
  * @author Samuel PETIT
  */
 @Data
-@Builder
-public class Drink {
+public class Drink implements Serializable {
+	private static final long serialVersionUID = 2519371577648434071L;
+
 	/**
 	 * The identifier of the drink
 	 */
-	int id;
+	private int id;
 	
 	/**
 	 * The name of the drink
 	 */
-	String name;
+	private String name;
 	
 	/**
 	 * Quantity available for the drink
 	 */
-	int quantity;
+	private int quantity;
 	
 	/**
 	 * The unit price
 	 */
-	Double unitPrice;
+	private Double unitPrice;
 	
 	/**
 	 * A description of the drink
 	 */
-	String description;
+	private String description;
 	
 	/**
 	 * The height of the drink (in centimeters)
 	 */
-	Double height;
+	private Double height;
 	
 	/**
 	 * The weight of the drink (in pounds)
 	 */
-	Double weight;
+	private Double weight;
 	
+	/**
+	 * Constructor.
+	 * @param builder a {@link DrinkBuilder} reprensetation of the drink
+	 */
 	public Drink(DrinkBuilder builder) {
 		this.id = builder.id;
 		this.name = builder.name;
@@ -90,5 +96,67 @@ public class Drink {
 		public Drink build() {
 			return new Drink(this);
 		}
+	}
+
+	/**
+	 * Get the identifier of the drink
+	 * @return id the identifier of the drink
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * Get the name of the drink
+	 * @return name the name of the drink
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * Get the quantity remained for this drink
+	 * @return quantity the quantity remained for the drink
+	 */
+	public int getQuantity() {
+		return quantity;
+	}
+
+	/**
+	 * Get the quantity remained for this drink
+	 */
+	public void decreaseQuantity() {
+		quantity --;
+	}
+	
+	/**
+	 * Get the unit price of the drink
+	 */
+	public Double getUnitPrice() {
+		return unitPrice;
+	}
+
+	/**
+	 * Get the description of the drink
+	 * @return description the description of the drink
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * Get the height of the drink
+	 * @return height the height of the drink
+	 */
+	public Double getHeight() {
+		return height;
+	}
+
+	/**
+	 * Get the weight of the drink
+	 * @return weight the weight of the drink
+	 */
+	public Double getWeight() {
+		return weight;
 	}
 }

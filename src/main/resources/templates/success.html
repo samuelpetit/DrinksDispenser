@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Drink Successfully Bought</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" th:src="@{/js/jquery-3.2.1.min.js}"/>
+<script type="text/javascript" th:src="@{/js/success.js}"/>
+<link th:href="@{/css/common.css}" href="/css/common.css"  rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <h1>You have successfully bought a drink !</h1>
+    <div id="returnedMoney">
+    	<p th:text="'Money returned: '" />
+    </div>
+		
+	<div class="buySomeDrink">		
+        <a href="/searchForDrink">Buy another drink</a>
+    </div>
+	<input type="hidden" id="returnedCoinsContent" th:value="${returnedCoins}" />
+</body>
+</html>
